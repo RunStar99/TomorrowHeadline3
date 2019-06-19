@@ -35,7 +35,7 @@ public class AboutFragment extends Fragment {
         newsGithub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/RunStar99/EasyReading"));
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/RunStar99/TomorrowHeadline3"));
                 startActivity(intent);
             }
         });

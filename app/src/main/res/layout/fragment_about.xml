@@ -7,12 +7,12 @@
     android:background="@color/colorPrimary"
     tools:context="com.example.eight.scannews.view.AboutFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <!--<ImageView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_gravity="center"-->
-        <!--android:src="@drawable/ic_news"/>-->
+     <!--TODO: Update blank fragment layout-->
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_news"/>
 
 
     <LinearLayout
@@ -42,7 +42,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="https://github.com/RunStar99/EasyReading"
+        android:text="https://github.com/RunStar99/TomorrowHeadline3"
         android:textColor="@color/white"
         android:gravity="center"/>
 
