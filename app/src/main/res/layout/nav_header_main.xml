@@ -32,6 +32,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="ScanNews  v0.1" />
+        android:text="tomorrowHeadline  v1.1" />
 
 </LinearLayout>
