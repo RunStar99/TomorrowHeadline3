@@ -15,6 +15,6 @@
     <version value="1" ></version>
 
     <list>
-        <mapping class="com.example.eight.scannews.utils.Channels"></mapping>
+        <mapping class="com.example.eight.TomorrowHeadline.utils.Channels"></mapping>
     </list>
 </litepal>
