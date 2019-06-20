@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {                 //back键关闭
+        if (drawer.isDrawerOpen(GravityCompat.START)) {                                                                    //back键关闭
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
@@ -126,10 +126,6 @@ public class MainActivity extends AppCompatActivity
                 getSupportFragmentManager().beginTransaction().replace(R.id.frame_content,
                         new AboutFragment()).commit();
                 break;
-            case R.id.nav_share:
-                Snackbar.make(navigationView,"敬请期待",Snackbar.LENGTH_SHORT).show();
-                break;
-
 
             default:
                 break;

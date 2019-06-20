@@ -22,12 +22,10 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-/**
- *
- */
+
 
 public class HttpUtils {
-    private static String baseUrl = "https://api.tianapi.com/";
+    private static String baseUrl = "https://api.tianapi.com/";           //Retrofit2的baseUlr 必须以 /（斜线） 结束
     private static final int DEFAULT_TIMEOUT = 10;
     private Retrofit retrofit;
     private ApiService apiService;

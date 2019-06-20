@@ -4,9 +4,7 @@ import com.example.eight.scannews.beans.NewsBean;
 
 import java.util.List;
 
-/**
- * Created by eight on 2017/6/6.
- */
+
 
 public interface Contract {
     // Model 层
