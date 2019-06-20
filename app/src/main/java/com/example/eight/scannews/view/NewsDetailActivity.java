@@ -71,9 +71,9 @@ public class NewsDetailActivity extends AppCompatActivity{
                                 + pictureUrl);
 
         WebSettings webSettings = newsWebContent.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        webSettings.setUseWideViewPort(true);
-        webSettings.setLoadWithOverviewMode(true);
+        webSettings.setJavaScriptEnabled(true);                                                             //支持JS
+        webSettings.setUseWideViewPort(true);                                                                   //将图片调整到适合webview的大小
+        webSettings.setLoadWithOverviewMode(true);                                                              // 缩放至屏幕的大小
 
         HttpUtils.showPicture(getApplicationContext(), ivImage, pictureUrl);
 

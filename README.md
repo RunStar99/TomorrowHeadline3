@@ -11,6 +11,6 @@
 |新闻频道工具类|   频道处理方法，解析频道列表的Json文件，遍历并存储频道   |   李润鑫   |
 |新闻分类|  顶部新闻分类并实现左右滑动（Tablayout+ViewPager）    |冯亮|
 |上拉刷新，下拉加载|  使用SwipeRefreshLayout设计list_fragment    |   康乔   |
-|新闻|新闻分类|   冯亮   |
+|跳转github|点击跳转github页面|   冯亮   |
 |    可折叠的toolbar  |使用CollapsingToolbarLayout实现顶部toolbar可折叠|康乔|
-|  抽屉界面    |实现抽屉界面+导航侧滑|    杨明鑫  |
+|  抽屉界面    |实现抽屉界面+导航侧滑（DrawerLayout NavigationView）|    杨明鑫  |

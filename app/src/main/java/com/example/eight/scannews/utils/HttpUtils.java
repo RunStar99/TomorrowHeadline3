@@ -11,6 +11,7 @@ import com.example.eight.scannews.beans.NewsBean;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observer;
@@ -53,7 +54,7 @@ public class HttpUtils {
                 .baseUrl(baseUrl)
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create(gson))
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())   //retrofit中添加Rxjava
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())                                         //retrofit中添加Rxjava
                 .build();
         apiService = retrofit.create(ApiService.class);
     }
@@ -81,15 +82,15 @@ public class HttpUtils {
      * @param key  密钥
      * @param num  每页数量
      * @param page 页数
-     * @param observer 观察值对象
+     * @param observer 观察者对象
      */
 
     public void getNewsFromHttp(String channel, String key, int num, int page,
                                 Observer<NewsBean> observer) {
         apiService.getNews(channel, key, num, page)
-                .subscribeOn(Schedulers.io())
-                .unsubscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())                                                            //改变调用它之前代码的线程
+                .unsubscribeOn(Schedulers.io())                                                         //取消订阅
+                .observeOn(AndroidSchedulers.mainThread())                                              //改变调用它之后代码的线程
                 .subscribe(observer);
     }
 
@@ -100,7 +101,7 @@ public class HttpUtils {
      */
     public static void showPicture(Context context, ImageView imageView, String url) {
         if (imageView == null) {
-            throw new IllegalArgumentException("argument error");
+            throw new IllegalArgumentException("argument error");                                               //非法参数异常
         }
 
         SharedPreferences sp = context.getSharedPreferences("SETTING", Context.MODE_PRIVATE);

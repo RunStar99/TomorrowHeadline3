@@ -68,7 +68,7 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         } else {
             View view = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.footer_item, parent, false);
-            view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,           //
+            view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,                           //布局参数，实现动态布局
                     ViewGroup.LayoutParams.WRAP_CONTENT));
             return new FooterViewHolder(view);
         }

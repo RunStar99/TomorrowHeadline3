@@ -33,7 +33,7 @@ import static android.content.ContentValues.TAG;
 public class NewsListFragment extends Fragment
         implements Contract.NewsView, SwipeRefreshLayout.OnRefreshListener {
 
-    private SwipeRefreshLayout swipeRefreshLayout;              //实现上拉刷新,下拉加载
+    private SwipeRefreshLayout swipeRefreshLayout;
     private RecyclerView newsListView;
     private LinearLayoutManager layoutManager;
     private Contract.NewsPresenter newsPresenter;
@@ -51,7 +51,7 @@ public class NewsListFragment extends Fragment
         NewsListFragment fragment = new NewsListFragment();
         bundle.putInt("type", type);
         Log.e("----->", "newInstance: " + type);
-        fragment.setArguments(bundle);
+        fragment.setArguments(bundle);                                                              //.setArguments 官方推荐的传参方法
         return fragment;
     }
 
@@ -67,26 +67,26 @@ public class NewsListFragment extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.news_list_fragment, null);
-        swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_refresh_layout);
-        newsListView = (RecyclerView) view.findViewById(R.id.news_list_view);
+        swipeRefreshLayout = view.findViewById(R.id.swipe_refresh_layout);
+        newsListView = view.findViewById(R.id.news_list_view);
         Log.e("----->", "onCreateView: ");
 
-        swipeRefreshLayout.setColorSchemeResources(                 //设置下拉进度条颜色变化
+        swipeRefreshLayout.setColorSchemeResources(                                                                 //设置下拉进度条颜色变化
                 R.color.colorPrimary,
                 R.color.colorAccent,
                 R.color.colorPrimaryDark);
-        swipeRefreshLayout.setOnRefreshListener(this);          //监听界面的滑动
+        swipeRefreshLayout.setOnRefreshListener(this);                                                                  //监听界面的滑动
 
-        newsListView.setHasFixedSize(true);                 //避免重复计算item高度
+        newsListView.setHasFixedSize(true);                                                                             //避免重复计算item高度
         layoutManager = new LinearLayoutManager(getActivity());
         newsListView.setLayoutManager(layoutManager);
-        newsListView.setItemAnimator(new DefaultItemAnimator());            //设置动画
+        newsListView.setItemAnimator(new DefaultItemAnimator());                                                             //设置动画
         newsListView.addItemDecoration(new DividerItemDecoration(getActivity(),
-                DividerItemDecoration.VERTICAL));                   //设置分割线
+                DividerItemDecoration.VERTICAL));                                                                            //设置分割线
         newsAdapter = new NewsAdapter(getActivity().getApplicationContext());
         newsAdapter.setOnItemClickListener(onItemClickListener);
         newsListView.setAdapter(newsAdapter);
-        newsListView.addOnScrollListener(onScrollListener);              //滚动事件
+        newsListView.addOnScrollListener(onScrollListener);                                                                 //滚动事件监听
         onRefresh();
         return view;
     }
@@ -112,7 +112,7 @@ public class NewsListFragment extends Fragment
             intent.putExtras(bundle);
             View transitionView = view.findViewById(R.id.news_picture);
             ActivityOptionsCompat optionsCompat = ActivityOptionsCompat
-                    .makeSceneTransitionAnimation(getActivity(), transitionView, "news_picture");
+                    .makeSceneTransitionAnimation(getActivity(), transitionView, "news_picture");     //转场动画
             ActivityCompat.startActivity(getActivity(), intent, optionsCompat.toBundle());
         }
     };
@@ -140,8 +140,8 @@ public class NewsListFragment extends Fragment
 
     @Override
     public void showProgress() {
-        swipeRefreshLayout.setRefreshing(true);
-    }   //刷新的进度条
+        swipeRefreshLayout.setRefreshing(true);                                                     //设置刷新的状态
+    }
 
     @Override
     public void addNews(List<NewsBean.NewslistBean> newsBeanList) {
@@ -149,7 +149,7 @@ public class NewsListFragment extends Fragment
         if (data == null) {
             data = new ArrayList<>();
         }
-        data.addAll(newsBeanList);          //传入整个list
+        data.addAll(newsBeanList);                                       //传入整个list
 
         if (pageIndex == 0) {
             newsAdapter.setData(data);

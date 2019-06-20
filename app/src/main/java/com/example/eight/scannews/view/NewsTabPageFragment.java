@@ -40,13 +40,13 @@ public class NewsTabPageFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {                                                 //创建Fragment时被回调
         super.onCreate(savedInstanceState);
     }
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater,
+    public View onCreateView(LayoutInflater inflater,                                                       //每次创建、绘制该Fragment的View组件时回调该方法，Fragment将会显示该方法返回的View 组件
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.news_tab_page_layout, null);
@@ -54,16 +54,12 @@ public class NewsTabPageFragment extends Fragment {
         TabLayout tabLayout = view.findViewById(R.id.tab_layout);
 
         newsTab =  ChannelsUtils.setupTab("cn");
-        viewPager.setOffscreenPageLimit(1);
+        viewPager.setOffscreenPageLimit(1);                                                                  //预加载页数
         initViewPager(viewPager);
         for (String aNewsTab : newsTab) {
             tabLayout.addTab(tabLayout.newTab().setText(aNewsTab));
         }
-        /*if (newsTab.size() < 5) {
-            tabLayout.setTabMode(TabLayout.MODE_FIXED);
-        } else {
-            tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
-        }*/
+
         tabLayout.setupWithViewPager(viewPager);
         return view;
     }
@@ -77,17 +73,17 @@ public class NewsTabPageFragment extends Fragment {
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {                                        //当 Fragment 所在的Activity被启动完成后回调该方法
         super.onActivityCreated(savedInstanceState);
     }
 
     @Override
-    public void onStart() {
+    public void onStart() {                                                                                       //启动 Fragment 时被回调，此时Fragment可见
         super.onStart();
     }
 
     @Override
-    public void onResume() {
+    public void onResume() {                                                                                //恢复 Fragment 时被回调，获取焦点时回调
         super.onResume();
     }
 
@@ -97,7 +93,7 @@ public class NewsTabPageFragment extends Fragment {
     }
 
     @Override
-    public void onDestroyView() {
+    public void onDestroyView() {                                                               //销毁与Fragment有关的视图，但未与Activity解除绑定
         super.onDestroyView();
     }
 
@@ -107,7 +103,7 @@ public class NewsTabPageFragment extends Fragment {
     }
 
     @Override
-    public void onDetach() {
+    public void onDetach() {                                                            //与onAttach相对应，当Fragment与Activity关联被取消时调用
         super.onDetach();
     }
 

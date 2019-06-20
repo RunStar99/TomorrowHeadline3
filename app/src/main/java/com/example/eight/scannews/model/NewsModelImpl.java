@@ -36,7 +36,7 @@ public class NewsModelImpl implements Contract.NewsModel {
                     }
 
                     @Override
-                    public void onNext(@NonNull NewsBean newsBean) {
+                    public void onNext(@NonNull NewsBean newsBean) {                                                           //RxJava的事件回调方法，针对普通事件
                         List<NewsBean.NewslistBean> newslistBeanList = newsBean.getNewslist();
                         Log.e("--------->", "onNext: " + newslistBeanList.size());
                         listener.onSuccess(newslistBeanList);
@@ -55,7 +55,7 @@ public class NewsModelImpl implements Contract.NewsModel {
                     @Override
                     public void onComplete() {
                         Log.i("---------->", "onComplete: ");
-                    }
+                    }                                                               //onCompleted(): 事件队列完结。RxJava 不仅把每个事件单独处理，还会把它们看做一个队列。RxJava 规定，当不会再有新的 onNext() 发出时，需要触发 onCompleted() 方法作为标志
                 });
     }
 
