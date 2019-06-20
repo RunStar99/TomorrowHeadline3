@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:text="https://github.com/RunStar99/TomorrowHeadline3"
         android:textColor="@color/white"
-        android:gravity="center"/>
+        android:gravity="center"/>                                                      //*/
 
 
 
